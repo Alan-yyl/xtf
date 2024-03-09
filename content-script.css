@@ -1,0 +1,69 @@
+.translate-panel {
+    width: 280px;
+    box-shadow: 1px 1px 8px 2px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    transform: scale(0.6);
+    z-index: 1000;
+    background: #fff;
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+    transition: all .2s;
+    display: flex; /* 设置为Flex容器 */
+    flex-direction: column; /* 垂直方向排列 */
+}
+
+.translate-panel.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.translate-panel header {
+    background: #eee;
+    padding: 10px;
+    font-size: 12px;
+    color: #666;
+    position: relative;
+}
+
+.translate-panel header .close {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.translate-panel main {
+    padding: 0 10px;
+    margin-bottom: 0;
+    flex: 1; /* 使<main>的高度自适应 */
+    display: flex; /* 设置为Flex容器 */
+    flex-wrap: wrap; /* 允许内部元素换行 */
+}
+
+.translate-panel main > div {
+    flex: 1 0 33%; /* 每个子元素三等分 */
+    box-sizing: border-box; /* 让padding和border计算在盒模型内 */
+    padding: 0 10px; /* 每个子元素的左右padding */
+    overflow: auto; /* 处理内容过多时出现的滚动条 */
+}
+
+.translate-panel main .source,
+.translate-panel main .zh-dest,
+.translate-panel main .es-dest {
+    border-bottom: 1px #eee solid;
+    padding-bottom: 60px;
+}
+
+.translate-panel .title,
+.translate-panel .content {
+    display: block; /* 文字内容以块级元素显示 */
+    font-size: 13px; /* 将字体大小设置在此处，而不是在.title和.content中 */
+    color: #666;
+    margin-top: 6px;
+}
+
+.translate-panel .title {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+}
